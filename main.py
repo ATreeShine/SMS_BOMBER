@@ -1,9 +1,7 @@
-# script.py
 import requests
-import termcolor
 
-HEADER = '\033[92m'   # Bright red
-OKBLUE = '\033[94m'   # Bright blue
+HEADER = '\033[92m'  
+OKBLUE = '\033[94m'  
 ENDCOLOR = '\033[0m'
 
 def start_attack():
@@ -15,11 +13,10 @@ def start_attack():
             print(f"{HEADER}Attack started successfully!{ENDCOLOR}")
         else:
             print(f"{HEADER}Failed to start the attack.{ENDCOLOR}")
-    except:
-        print(f"{HEADER}An error occurred while starting the attack.{ENDCOLOR}")
+    except Exception as e:
+        print(f"{HEADER}An error occurred while starting the attack: {str(e)}{ENDCOLOR}")
 
 def main():
-    print(OKBLUE)
     while True:
         print("\t\t\t┌───────────────────┐")
         print("\t\t\t│   MENU  │")
@@ -28,21 +25,16 @@ def main():
         print("\t\t\t│ [1] Start Attack │")
         print("\t\t\t│ [0] Exit          │")
         print("\t\t\t└───────────────────┘")
-        choice = input("{HEADER}Enter your choice: {ENDCOLOR}").strip()
+        choice = input(f"{HEADER}Enter your choice: {ENDCOLOR}").strip()
         if choice == "1":
-            print(OKBLUE)
+            print(f"{OKBLUE}Starting attack...{ENDCOLOR}")
             start_attack()
             print(f"{HEADER}Attack complete!{ENDCOLOR}")
-            print(ENDCOLOR)
         elif choice == "0":
-            print(OKBLUE)
-            print(f"{HEADER}Exiting...{ENDCOLOR}")
-            print(ENDCOLOR)
+            print(f"{OKBLUE}Exiting...{ENDCOLOR}")
             break
-
         else:
             print(f"{HEADER}Invalid choice! Please try again.{ENDCOLOR}")
-            print(ENDCOLOR)
 
 if __name__ == "__main__":
     main()
