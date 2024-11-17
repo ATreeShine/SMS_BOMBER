@@ -14,8 +14,8 @@ A script for penetration testers and cybersecurity professionals to perform **au
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/advanced-attack-script.git
-   cd advanced-attack-script
+   git clone https://github.com/Atreeshine/SMS_BOMBER
+   cd SMS_BOMBER
    ```
 Install dependencies:
    ``` pip install requests```
